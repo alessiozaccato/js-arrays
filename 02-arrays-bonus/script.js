@@ -17,15 +17,27 @@ console.log(reversedTeachers);
 // con un nome di lunghezza maggiore o uguale a 5 caratteri
 
 //FIRST WAY
-const longNames = teachers.filter(checkLength);
+const longNames = teachers.filter(checkLength); // declare a function inside the filter method and than using (for later)
 function checkLength(teacher) {
   return teacher.length >= 5;
 }
 console.log(longNames);
 
 //SECOND WAY
-const longNames1 = teachers.filter(teacher1 => teacher1.length >= 5); // using arrow function to make it more efficient
+const longNames1 = teachers.filter(teacher1 => teacher1.length >= 5); // using arrow function to make it more efficient (for later)
 console.log(longNames1);
+
+//THIRD WAY
+
+const longNames2 = [];
+for (i = 0; i < teachers.length; i++) {
+  if (teachers[i].length >= 5) {
+    longNames2.push(teachers[i]);
+  }
+
+}
+console.log(longNames2);
+
 
 // 3. Rimuovi 'Ed' dall'array teachers
 teachers.splice(5, 1);// cause the array is reversed i need to go on the position 5
@@ -36,12 +48,12 @@ console.log(teachers);
 // 4. Verifica se 'Fabio' è presente nell'array teachers
 // e salva il risultato nella variabile isFabioPresent
 //FIRST WAY
-const isFabioPresent = teachers.find(teacher => teacher.includes("Fabio")); // using arrow function to make it more efficient
+const isFabioPresent = teachers.find(teacher => teacher.includes("Fabio")); // using arrow function to make it more efficient (for later)
 console.log(isFabioPresent);
 
-
-
 //SECOND WAY 
+const isFabioPresent1 = teachers.includes("Fabio"); // using just includes
+console.log(isFabioPresent1);
 
 
 // 5. Unisci tutti gli insegnanti nell'array teachers in una stringa  separata da virgole e salvala nella variabile teachersString
